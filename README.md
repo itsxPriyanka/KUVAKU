@@ -2,6 +2,9 @@
 
 An AI-powered lead scoring system that combines rule-based logic with AI reasoning to qualify sales leads based on product fit and buying intent.
 
+## Live Base URL
+https://kuvaku.onrender.com
+
 ## Features
 
 - **Offer Management**: Store product/service details and ideal customer profiles
@@ -319,25 +322,6 @@ curl http://localhost:3000/api/results
 2. Set base URL to `http://localhost:3000`
 3. Follow the endpoint documentation above
 
-## Error Handling
-
-The API returns consistent error responses:
-
-```json
-{
-  "error": {
-    "message": "Description of the error",
-    "details": ["Additional error information"]
-  }
-}
-```
-
-**Common HTTP Status Codes:**
-- `200` - Success
-- `201` - Created successfully
-- `400` - Bad request (validation error)
-- `404` - Resource not found
-- `500` - Internal server error
 
 ## Environment Variables
 
@@ -378,10 +362,6 @@ If AI scoring fails, the system falls back to rule-based scoring only.
 - Ensure CSV has all required columns
 - Check for proper UTF-8 encoding
 - Verify file size is under 5MB
-
-## License
-
-MIT
 
 ## Support
 
