@@ -223,43 +223,7 @@ View scoring analytics.
 **GET** `/api/leads` - View uploaded leads
 **GET** `/health` - Health check
 
-## Scoring Logic
 
-### Rule-Based Scoring (Max 50 points)
-
-1. **Role Scoring (0-20 points)**
-   - Decision Maker (CEO, CTO, VP, Director, Head of, etc.): **20 points**
-   - Influencer (Manager, Lead, Senior, etc.): **10 points**
-   - Other roles: **0 points**
-
-2. **Industry Match (0-20 points)**
-   - Exact match with ideal use cases: **20 points**
-   - Adjacent/related industry: **10 points**
-   - No match: **0 points**
-
-3. **Data Completeness (0-10 points)**
-   - All fields filled: **10 points**
-   - Missing fields: **0 points**
-
-### AI-Based Scoring (Max 50 points)
-
-Uses OpenAI to analyze:
-- Role decision-making power
-- Industry-product fit
-- Background relevance to product benefits
-
-**Intent Mapping:**
-- High Intent: **50 points**
-- Medium Intent: **30 points**
-- Low Intent: **10 points**
-
-### Final Intent Classification
-
-Total Score = Rule Score + AI Score
-
-- **High Intent**: Score ≥ 70
-- **Medium Intent**: Score 40-69
-- **Low Intent**: Score < 40
 
 ## Project Structure
 
@@ -338,20 +302,7 @@ curl http://localhost:3000/api/results
 - Sequential AI calls (can be slow for many leads)
 - Single offer at a time
 
-### Potential Enhancements
-- Database integration (PostgreSQL/MongoDB)
-- Batch AI processing with rate limiting
-- Multiple offers support
-- Webhook notifications
-- Lead deduplication
-- Historical scoring tracking
-- Advanced filtering and search
-- Role-based access control
 
-## Troubleshooting
-
-### OpenAI API Errors
-If AI scoring fails, the system falls back to rule-based scoring only.
 
 **Common issues:**
 - Invalid API key - Check `.env` file
@@ -363,6 +314,4 @@ If AI scoring fails, the system falls back to rule-based scoring only.
 - Check for proper UTF-8 encoding
 - Verify file size is under 5MB
 
-## Support
 
-For issues or questions, please open an issue on the repository.
